@@ -1,0 +1,187 @@
+/* Common styles */
+h2 + p {
+    font-style: italic;
+}
+
+p:first-letter {
+    font-size: 30px;
+    color: #87cefa;
+}
+
+.tm-main-content section p {
+    text-indent: 20px;
+    line-height: 1.9;
+}
+
+@media screen {
+    /* Style for browsers */
+    .tm-nav-item-link:hover {
+        background-color: #f5f5f5;
+    }
+
+    .btn.btn-primary.submit-btn {
+        background-color: #ffffff;
+        border-color: #87cefa;
+        color: #87cefa;
+        border-radius: 0;
+        float: right;
+        padding: 10px 25px;
+    }
+
+    .btn.btn-primary.submit-btn:hover {
+        background-color: #87cefa;
+        color: white;
+    }
+
+    .mandatory-field {
+        position: relative;
+    }
+
+    .mandatory-field:before {
+        content: "*";
+        position: absolute;
+        top: 2px;
+        font-size: 14px;
+        font-weight: bold;
+        right: -2px;
+        color: red;
+        display: block;
+        width: 16px;
+        height: 16px;
+    }
+
+    .tm-content-box:not(:empty), .tm-main-nav, .blocks {
+        -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.16), 0 2px 6px rgba(0, 0, 0, 0.23);
+        -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.16), 0 2px 6px rgba(0, 0, 0, 0.23);
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.16), 0 2px 6px rgba(0, 0, 0, 0.23);;
+    }
+
+    .box-work {
+        padding: 10px;
+    }
+
+    .box-work:nth-child(even) {
+        background-color: #f5f5f5;
+    }
+
+    .box.box-work div > p:first-letter {
+        color: #000000;
+    }
+
+    ol li a, ol li a:visited {
+        color: #000000;
+    }
+
+    ol li a:visited {
+        text-decoration: underline;
+    }
+
+    ol li a:hover {
+        text-decoration: double underline;
+        color: #87cefa;
+    }
+
+    ol li:nth-child(1) .text:after, ol li:nth-child(3) .text:after {
+        content: "New";
+        color: red;
+        font-size: 10px;
+        position: relative;
+        top: -5px;
+        display: inline-block;
+    }
+
+    .tm-banner {
+        background-color: #f5f5f5;
+    }
+
+    .tm-banner-inner {
+        background-color: #ffffff;
+    }
+
+    .gallery-container .box-bg,
+    .gallery-container .box-bg:hover,
+    .btn.btn-primary.submit-btn,
+    .btn.btn-primary.submit-btn:hover {
+        transition: all 0.25s ease-in-out;
+        -webkit-transition: all 0.25s ease-in-out;
+    }
+
+    .gallery-container .box-bg:hover {
+        background-color: #87cefa;
+    }
+
+    .gallery-container .box-bg:hover h2.tm-section-title {
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+    .flex-2-col, .tm-content-box > .tm-team-description-container {
+        display: flex;
+    }
+
+    .flex-2-col .tm-team-description-container {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .tm-content-box > .tm-team-description-container .tm-section-title2 {
+        text-align: left;
+        margin-left: 0;
+    }
+
+    section:before {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 2.5em 16em 0 0;
+        border-color: #87cefa transparent transparent transparent;
+    }
+
+    .carousel-content .tm-section-title {
+        color: gainsboro;
+        letter-spacing: 5px;
+    }
+
+}
+
+@media print {
+    /* Style for printing */
+    .tm-sidebar, .heading, #about, .blocks, #ideas, #ideas + .tm-content-box {
+        display: none;
+    }
+
+    #home, #home + section, .tm-footer {
+        display: block;
+    }
+
+    .tm-main-content {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .padding-medium {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    section > .tm-content-box {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin-bottom: 0;
+    }
+
+    section > .tm-content-box .tm-team-description-container {
+        flex-basis: 70%;
+        min-width: 70%;
+    }
+
+    h2.tm-section-title {
+        color: #0000ff;
+    }
+
+}
