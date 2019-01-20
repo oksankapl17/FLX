@@ -1,4 +1,4 @@
-/* Common styles */
+
 h2 + p {
     font-style: italic;
 }
@@ -14,7 +14,6 @@ p:first-letter {
 }
 
 @media screen {
-    /* Style for browsers */
     .tm-nav-item-link:hover {
         background-color: #f5f5f5;
     }
@@ -148,7 +147,6 @@ p:first-letter {
 }
 
 @media print {
-    /* Style for printing */
     .tm-sidebar, .heading, #about, .blocks, #ideas, #ideas + .tm-content-box {
         display: none;
     }
