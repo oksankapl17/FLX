@@ -194,7 +194,8 @@ label {
     align-items: flex-start;
     flex-direction: row;
     justify-content: flex-start;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    margin-top: 1.5rem; }
     .main-wrapper main section .form .submit-btn {
       margin-top: 1.5rem;
       margin-bottom: 1.5rem;

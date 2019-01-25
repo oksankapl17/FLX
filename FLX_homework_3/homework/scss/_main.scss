@@ -238,6 +238,7 @@ label {
       }
       .form {
         @include flex-layout(row, flex-start, flex-start, wrap);
+        margin-top: $regular-spacer;
         .submit-btn {
           margin-top: $regular-spacer;
           margin-bottom: $regular-spacer;
