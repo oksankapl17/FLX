@@ -1,0 +1,29 @@
+$black: #000000;
+$white: #FFFFFF;
+$red: #FF5722;
+$light-gray: #EFEFEF;
+$gray: #607D8B;
+$blue: #01ACAC;
+$accent-color: $white;
+$border-color: $gray;
+$input-border: $black;
+$description-color: $red;
+$post-heading-color: #0097A7;
+$label-color: #0097A7;
+
+$grid: 25, 50, 75, 100;
+
+$small-spacer: 1rem;
+$regular-spacer: 1.5rem;
+$large-spacer: $small-spacer*2;
+$container-width: 960px;
+
+$body-font: normal 300 15px/24px Roboto, Ubuntu, Cantarell, Helvetica, sans-serif;
+$body-font-color: $black;
+
+$main-bg: $white;
+$header-image: '../img/header_background_v1.jpg';
+$link-color: $white;
+$btn-bg: $blue;
+$btn-color: $white;
+$post-bg: $light-gray;

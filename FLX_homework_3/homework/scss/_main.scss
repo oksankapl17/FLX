@@ -1,0 +1,248 @@
+@mixin width($width) {
+  max-width: $width;
+  width: 100%;
+}
+
+@mixin flex-layout($direction, $align, $justify, $wrap: nowrap) {
+  display: flex;
+  align-items: $align;
+  flex-direction: $direction;
+  justify-content: $justify;
+  flex-wrap: $wrap;
+}
+
+@mixin container() {
+  margin: 0 auto;
+  @include width($container-width);
+}
+
+@mixin bold-text() {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@mixin link-style() {
+  @include bold-text();
+  text-align: center;
+  text-decoration: none;
+}
+
+@mixin header() {
+  @include width(100%);
+  height: 100vh;
+  background: transparent url($header-image) 0 0 no-repeat;
+  background-size: cover;
+}
+
+@mixin btn($bg: $btn-bg, $color: $btn-color) {
+  display: inline-block;
+  min-width: $small-spacer*14;
+  background-color: $bg;
+  color: $color;
+  font-size: 1rem;
+  padding: $small-spacer*0.6 $small-spacer;
+  border: 0 none;
+  outline: none;
+  margin-bottom: $small-spacer;
+  @include link-style();
+}
+
+@mixin input() {
+  display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: $input-border;
+  background-color: transparent;
+  background-clip: padding-box;
+  border: 1px solid $input-border;
+  border-radius: 0;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+@mixin make-grid($spacer: $small-spacer*0.5) {
+  .row {
+    margin-left: -$spacer;
+    margin-right: -$spacer;
+    .col {
+      padding: 0 $spacer;
+    }
+    @each $size in $grid {
+      .flex-#{$size} {
+        flex-basis: $size*1%;
+      }
+    }
+  }
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+body {
+  background: $main-bg;
+  margin: 0;
+  padding: 0;
+  font: $body-font;
+  color: $body-font-color;
+}
+
+@include make-grid();
+
+img {
+  @include width(100%);
+  height: auto;
+}
+
+.btn {
+  @include btn();
+}
+
+input,
+.form-control {
+  @include input();
+}
+
+label {
+  display: block;
+  margin-bottom: .5rem;
+  color: $label-color;
+  text-align: right;
+}
+
+.form-group {
+  &.required label {
+    &:after {
+      content: ' *';
+      color: $label-color;
+    }
+  }
+}
+
+.main-wrapper {
+  header {
+    position: relative;
+    @include header();
+    @include flex-layout(column, center, center);
+    .top-wrapper {
+      @include flex-layout(row, center, space-between);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      @include width(100%);
+      .logo, nav {
+        @include width(50%);
+      }
+      .logo {
+        img {
+          @include width(33%);
+        }
+      }
+      nav {
+        @include flex-layout(row, flex-start, flex-end);
+        align-self: stretch;
+        a {
+          display: block;
+          min-height: $small-spacer*3;
+          line-height: $small-spacer*3;
+          color: $accent-color;
+          font-size: $small-spacer;
+          @include width(33%);
+          @include link-style();
+          &:not(:last-of-type) {
+            border-right: 2px solid $border-color;
+          }
+        }
+      }
+    }
+    section {
+      text-align: center;
+      h1 {
+        color: $accent-color;
+        @include link-style();
+      }
+      .btn-top {
+        margin-top: $small-spacer*0.75;
+        padding: $small-spacer*0.75 $regular-spacer;
+      }
+    }
+  }
+  section {
+    h1 {
+      font-size: $regular-spacer;
+    }
+    h1, h4 {
+      margin: 0 0 $small-spacer*0.5 0;
+      text-align: right;
+      @include bold-text();
+      & + p {
+        margin-top: 0;
+      }
+    }
+  }
+  main {
+    @include container();
+
+    .toolbar {
+      padding: $small-spacer 0;
+      @include flex-layout(row, center, flex-end);
+      input {
+        flex-basis: 20%;
+      }
+    }
+    section {
+      &.post-list {
+        article {
+          background-color: $post-bg;
+          padding: $small-spacer*0.75;
+          margin-bottom: $regular-spacer;
+          @include flex-layout(row, flex-start, flex-start);
+          img {
+            flex-basis: 30%;
+          }
+          > div {
+            padding: $small-spacer*0.75;
+            @include flex-layout(column, flex-start, flex-start);
+            .post {
+              .post-description {
+                font-size: $small-spacer*0.8125;
+                line-height: 1;
+                letter-spacing: -1px;
+                color: $description-color;
+                padding: $small-spacer*0.6 0;
+                border-bottom: 1px solid $input-border;
+              }
+              h3 {
+                font-size: $small-spacer*1.25;
+                color: $post-heading-color;
+                margin: $small-spacer*0.75 0 0;
+                @include bold-text();
+              }
+              p {
+                margin-top: 0;
+              }
+            }
+            .btn {
+              align-self: flex-end;
+            }
+          }
+
+        }
+      }
+      &.about {
+        padding: $small-spacer*0.75;
+        margin: $regular-spacer*2 0;
+      }
+      .form {
+        @include flex-layout(row, flex-start, flex-start, wrap);
+        .submit-btn {
+          margin-top: $regular-spacer;
+          margin-bottom: $regular-spacer;
+          float: right;
+        }
+      }
+    }
+  }
+}
