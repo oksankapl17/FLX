@@ -175,6 +175,7 @@ label {
     }
     h1, h4 {
       margin: 0 0 $small-spacer*0.5 0;
+      line-height: 1;
       text-align: right;
       @include bold-text();
       & + p {
