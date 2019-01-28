@@ -1,0 +1,265 @@
+*, ::after, ::before {
+  box-sizing: border-box; }
+
+body {
+  background: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  font: normal 12px "Open Sans", Helvetica, sans-serif;
+  color: #000000; }
+  @media (min-width: 768px) and (max-width: 1199px) {
+    body {
+      font-size: 70%; } }
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem; }
+  .row .col {
+    padding: 0 0.5rem; }
+  .row .flex-25 {
+    flex-basis: 25%; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .row .flex-25 {
+        flex-basis: 100%; } }
+  .row .push-25 {
+    margin-left: 25%; }
+  .row .flex-50 {
+    flex-basis: 50%; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .row .flex-50 {
+        flex-basis: 100%; } }
+  .row .push-50 {
+    margin-left: 50%; }
+  .row .flex-75 {
+    flex-basis: 75%; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .row .flex-75 {
+        flex-basis: 100%; } }
+  .row .push-75 {
+    margin-left: 75%; }
+  .row .flex-100 {
+    flex-basis: 100%; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .row .flex-100 {
+        flex-basis: 100%; } }
+  .row .push-100 {
+    margin-left: 100%; }
+
+.container {
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  max-width: 1570px;
+  width: 100%; }
+  @media (min-width: 1200px) and (max-width: 1599px) {
+    .container {
+      max-width: 1170px;
+      width: 100%; } }
+  @media (min-width: 768px) and (max-width: 1199px) {
+    .container {
+      max-width: 960px;
+      width: 100%; } }
+
+img {
+  max-width: 100%;
+  width: 100%;
+  height: auto; }
+
+.btn {
+  display: inline-block;
+  min-width: 10rem;
+  background-color: #097774;
+  color: #FFFFFF;
+  font-size: inherit;
+  padding: 0.4rem 1rem;
+  border: 0 none;
+  outline: none;
+  margin-bottom: 1rem;
+  color: #FFFFFF;
+  text-align: center;
+  text-decoration: none;
+  padding-left: 2rem; }
+  .btn.inverse {
+    border: 2px solid #FFFFFF;
+    background-color: rgba(0, 0, 0, 0.35);
+    padding: 0.6rem 1rem; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .btn.inverse {
+        padding: 0.4rem 0.8rem;
+        min-width: 6rem; } }
+    @media (min-width: 768px) and (max-width: 1199px) {
+      .btn.inverse {
+        padding: 0.4rem 0.8rem;
+        min-width: 8rem; } }
+
+input,
+.form-control {
+  display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #000000;
+  background-color: transparent;
+  background-clip: padding-box;
+  border: 1px solid #000000;
+  border-radius: 0;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out; }
+
+label {
+  display: block;
+  margin-bottom: .5rem;
+  color: #0097A7;
+  text-align: right; }
+
+.form-group.required label:after {
+  content: ' *';
+  color: #0097A7; }
+
+.white-text {
+  color: #FFFFFF; }
+
+.black-text {
+  color: #000000; }
+
+header {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+  width: 100%;
+  color: #FFFFFF;
+  background-color: #000000; }
+  header .navbar, header .hero, header .buttons {
+    position: absolute;
+    left: 0;
+    right: 0; }
+  header .navbar {
+    top: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem; }
+    header .navbar .logo p {
+      text-transform: uppercase;
+      letter-spacing: 1px; }
+    header .navbar .nav {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0;
+      padding-left: 0;
+      list-style: none; }
+      header .navbar .nav a {
+        color: #FFFFFF;
+        text-align: center;
+        text-decoration: none;
+        padding-left: 2rem; }
+  header .hero {
+    top: 37.5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap; }
+    header .hero h1, header .hero p {
+      margin: 0; }
+    header .hero h1 {
+      font-size: 2.4rem;
+      letter-spacing: 0.2rem;
+      font-weight: 500; }
+      @media (min-width: 768px) and (max-width: 1199px) {
+        header .hero h1 {
+          font-size: 1.6rem; } }
+    header .hero .big {
+      font-size: 200%; }
+  header .buttons {
+    bottom: 21%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap; }
+    @media (min-width: 768px) and (max-width: 1199px) {
+      header .buttons {
+        bottom: 19%; } }
+
+.bw {
+  z-index: 2;
+  margin-top: -4rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 10rem;
+  background-color: #F3F3F3; }
+  .bw:before {
+    content: "";
+    display: block;
+    max-width: 101%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: #000000;
+    clip-path: polygon(100% 0, 0 0, 100% 100%); }
+  .bw .row {
+    margin-bottom: 1.5rem; }
+  .bw p {
+    margin: 0; }
+  .bw .black-text {
+    font-size: 125%; }
+
+.articles {
+  background-color: #F3F3F3;
+  padding-bottom: 2rem; }
+  .articles .title {
+    font-weight: normal;
+    text-align: center;
+    margin: 0 0 2rem; }
+    .articles .title .bold {
+      font-weight: bold; }
+  .articles .article-img {
+    margin: 0;
+    position: relative; }
+    .articles .article-img img {
+      max-height: 15rem;
+      object-fit: cover;
+      object-position: top center; }
+    .articles .article-img .likes {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      display: inline-block;
+      color: #FFFFFF;
+      border: 2px solid #FFFFFF;
+      background-color: rgba(0, 0, 0, 0.35);
+      padding: 0.3rem 0.5rem; }
+    .articles .article-img figcaption {
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+      color: #FFFFFF; }
+  .articles .right-col {
+    padding-left: 5%; }
+    .articles .right-col .small-paragraph {
+      text-align: center;
+      margin-bottom: 3rem; }
+      @media (min-width: 1200px) and (max-width: 1599px) {
+        .articles .right-col .small-paragraph {
+          margin-bottom: 2rem; } }
+      @media (min-width: 768px) and (max-width: 1199px) {
+        .articles .right-col .small-paragraph {
+          margin-bottom: 2rem; } }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .articles .right-col .small-paragraph {
+          margin-bottom: 1.5rem; } }
