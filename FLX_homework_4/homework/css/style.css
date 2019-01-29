@@ -271,7 +271,6 @@ img {
 ::placeholder {
     color: #000000;
     font: normal 12px "Open Sans", Helvetica, sans-serif;
-    font-weight: 600;
 }
 
 .form.inline, .form.inline > .form-group {
@@ -300,7 +299,7 @@ img {
     font-size: 0.75rem;
     line-height: 1.5;
     color: #000000;
-    background-color: transparent;
+    background-color: #F3F3F3;
     background-clip: padding-box;
     border: 1px solid #000000;
     border-radius: 0;
@@ -532,11 +531,12 @@ header .buttons {
     padding: 0.3rem 0.5rem;
 }
 
-.articles .article-img figcaption {
+.articles .article-img .shadowed {
     position: absolute;
     left: 1rem;
     bottom: 1rem;
     color: #FFFFFF;
+    text-shadow: #000000 0 0 1px;
 }
 
 .articles .right-col {
