@@ -240,18 +240,14 @@ img {
     background-color: #054846;
 }
 
-.btn.no-mb {
-    margin-bottom: 0;
-}
-
-.btn.block {
-    display: block;
-}
-
 .btn.inverse {
     border: 2px solid #FFFFFF;
     background-color: rgba(0, 0, 0, 0.35);
     padding: 0.6rem 1rem;
+}
+
+.btn.inverse:hover {
+    background-color: rgba(0, 0, 0, 0.55);
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
@@ -266,6 +262,14 @@ img {
         padding: 0.4rem 0.8rem;
         min-width: 8rem;
     }
+}
+
+.btn.no-mb {
+    margin-bottom: 0;
+}
+
+.btn.block {
+    display: block;
 }
 
 ::placeholder {
