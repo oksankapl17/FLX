@@ -597,6 +597,10 @@ header .buttons {
     flex-wrap: nowrap;
 }
 
+footer .row .col.newsletter-form {
+    padding-left: 10%;
+}
+
 footer .footer-nav {
     justify-content: space-between;
 }
