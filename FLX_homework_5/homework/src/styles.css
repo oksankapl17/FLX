@@ -144,6 +144,12 @@ section .content {
     grid-column: 1/3;
 }
 
+section .content:hover {
+    -webkit-filter: contrast(0.8);
+    filter: contrast(0.8);
+    cursor: pointer;
+}
+
 
 section .content.no-image {
     grid-template-columns: 1fr;
