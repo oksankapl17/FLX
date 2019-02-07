@@ -4,7 +4,7 @@ let TOTAL_PRIZE = 0;
 let MAX_PRIZE = 10;
 
 function randomInteger(min = 0, max = MAX_RANGE) {
-  let rand = min + Math.random() * (max + 1 - min);
+  const rand = min + Math.random() * (max + 1 - min);
   return Math.floor(rand);
 }
 
