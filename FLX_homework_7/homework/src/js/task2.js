@@ -28,32 +28,35 @@ function endGame(prize, proceed = false) {
     MAX_PRIZE = parseInt(MAX_PRIZE * 3);
     return confirm(`Congratulation! Your prize is ${prize}$. Do You want to continue?`);
   }
-  return alert(`Thank you for a game. Your prize is: ${prize}`);
+  return alert(`Thank you for a game. Your prize is: ${TOTAL_PRIZE}`);
 }
 
 function runTheGame() {
   GAMES_TOTAL = GAMES_TOTAL + 1;
   MAX_RANGE = parseInt(MAX_RANGE * 2);
   let prize = 0;
+  let maxPrize = MAX_PRIZE;
   let attempts = 3;
   const rand = randomInteger();
   let number = askUser(attempts, MAX_PRIZE);
   if (number === rand) {
-    prize = MAX_PRIZE;
+    prize = maxPrize;
     restart(endGame(prize, true));
   } else {
     attempts--;
+    maxPrize = Math.floor(MAX_PRIZE * 0.5);
     warning(number, attempts);
-    number = askUser(attempts, Math.floor(MAX_PRIZE * 0.5));
+    number = askUser(attempts, maxPrize);
     if (number === rand) {
-      prize = Math.floor(MAX_PRIZE * 0.5);
+      prize = maxPrize;
       restart(endGame(prize, true));
     } else {
       attempts--;
+      maxPrize = Math.floor(MAX_PRIZE * 0.25);
       warning(number, attempts);
-      number = askUser(attempts, Math.floor(MAX_PRIZE * 0.25));
+      number = askUser(attempts, maxPrize);
       if (number === rand) {
-        prize = Math.floor(MAX_PRIZE * 0.25);
+        prize = maxPrize;
         restart(endGame(prize, true));
       } else {
         endGame(prize);
