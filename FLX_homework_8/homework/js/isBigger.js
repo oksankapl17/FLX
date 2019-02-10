@@ -3,3 +3,5 @@ function isBigger(a, b) {
 }
 
 isBigger(5, -1);
+
+module.exports = isBigger;
