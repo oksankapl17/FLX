@@ -131,8 +131,7 @@ console.log(values({keyOne: 1, keyTwo: 2, keyThree: 3}));
 
 // 9
 function showFormattedDate(dateObj) {
-  return 'Date: ' + dateObj.getDate() + ' of ' + dateObj.toLocaleString('en-us', {month: 'short'}) + ', ' +
-      dateObj.getFullYear();
+  return `Date: ${dateObj.getDate()} of ${dateObj.toLocaleString('en-US', {month: 'short'})}, ${dateObj.getFullYear()}`;
 }
 
 console.log(showFormattedDate(new Date('2019-01-27T01:10:00')));
