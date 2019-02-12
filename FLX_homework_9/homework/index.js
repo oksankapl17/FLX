@@ -102,3 +102,51 @@ function getGreenAdultBananaLovers(inputData) {
 }
 
 console.log(getGreenAdultBananaLovers(data));
+
+// 7
+function keys(obj) {
+  const result = [];
+  for (let prop in obj) {
+    if (obj.hasOwnProperty(prop)) {
+      result.push(prop);
+    }
+  }
+  return result;
+}
+
+console.log(keys({keyOne: 1, keyTwo: 2, keyThree: 3}));
+
+// 8
+function values(obj) {
+  const result = [];
+  for (let prop in obj) {
+    if (obj.hasOwnProperty(prop)) {
+      result.push(obj[prop]);
+    }
+  }
+  return result;
+}
+
+console.log(values({keyOne: 1, keyTwo: 2, keyThree: 3}));
+
+// 9
+function showFormattedDate(dateObj) {
+  return 'Date: ' + dateObj.getDate() + ' of ' + dateObj.toLocaleString('en-us', {month: 'short'}) + ', ' +
+      dateObj.getFullYear();
+}
+
+console.log(showFormattedDate(new Date('2019-01-27T01:10:00')));
+
+// 10
+function isEvenYear(dateObj) {
+  return (dateObj.getFullYear() % 2) === 0;
+}
+
+isEvenYear(new Date('2019-01-27T01:10:00'));
+
+// 11
+function isEvenMonth(dateObj) {
+  console.log(((dateObj.getMonth() + 1) % 2) === 0);
+}
+
+isEvenMonth(new Date('2019-01-27T01:10:00'));
